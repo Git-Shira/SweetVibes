@@ -35,7 +35,7 @@ const showProducts = (items) => {
 
   items.map(item => {
     let div = document.createElement("div");
-    div.className = "col-lg-2 border p-2 product"; // הוספת ה- class "product"
+    div.className = "col-lg-2 col-md-3 col-sm-4 col-6 border p-2 product";
     productsContainer.append(div);
 
     div.style.backgroundImage = `url(${item.img})`;
@@ -291,6 +291,6 @@ const getSelectedFilter = () => {
   else if (flag2 == 1)
     return "2";
 
-    else
+  else
     return "none";
 }

@@ -37,7 +37,7 @@
           <img src="images/logo.png" alt="logo">
         </a>
       </div>
-      <nav>
+      <nav class="nav-links">
         <a href="about.html" target="_blank">
           <span class="material-symbols-outlined"> favorite</span>
           <span class="additional-text">אודותינו</span>
@@ -59,11 +59,17 @@
           <span class="additional-text">תפריט</span>
         </a>
       </nav>
+
       <div class="admin">
         <a href="password.html" target="_blank">
           <span class="material-symbols-outlined"> shield_person </span>
         </a>
       </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+
     </div>
   </header>
 
@@ -217,6 +223,14 @@
   </div>
 
   <!-- scripts -->
+
+  <!-- Navbar -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      navLinks.classList.toggle("show");
+    }
+  </script>
 
   <!-- #BringThemHomeNOW -->
   <div id="bthn" lang="he"></div>

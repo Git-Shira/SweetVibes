@@ -5,11 +5,14 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #f2e8cf;
 }
 
 /* header */
-header{
+header {
+  position: fixed;
   background-color: #f2e8cf;
+  z-index: 1000;
 }
 
 header .container {
@@ -37,7 +40,7 @@ header nav a {
   color: black !important;
   text-decoration: none;
   padding: 0 12px;
-  position: relative; /* הגדרת מיקום יחסי לילדים שלו */
+  position: relative;
 }
 
 header nav a::after {
@@ -56,29 +59,27 @@ header nav a:hover::after {
 
 .additional-text {
   position: absolute;
-  top: 120%; /* יוסיף את הכיתוב מתחת לקישור */
+  top: 120%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0; /* נסתיר את הכיתוב עד שהמשתמש ילחץ על הקישור */
-  transition: opacity 0.3s; /* אנימציה של עמעום */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 nav a:hover .additional-text {
-  opacity: 1; /* הצגת הכיתוב כאשר מעבירים על הקישור */
+  opacity: 1;
 }
 
 .material-symbols-outlined {
   font-size: 40px;
-  /* גודל הגופן */
   font-weight: 400;
-  /* משקל הגופן */
 }
 
-.admin{
-  filter:blur(1px) grayscale(180%);
+.admin {
+  filter: blur(1px) grayscale(180%);
 }
 
-.admin a:hover{
+.admin a:hover {
   filter: none;
   color: black !important;
 }
@@ -107,14 +108,11 @@ nav a:hover .additional-text {
   align-items: center;
   border: 1px solid #f2e8cf;
   border-radius: 8px;
-  /* קווים להבהרת המסגרת */
   padding: 20px;
   width: 500px;
   height: 260px;
   margin: 0 auto;
-  /* מרכוז את המסגרת בעמוד */
   margin-top: 50px;
-  /* מרווח מהמסגרת הבאה */
 
   color: #f2e8cf;
   background-color: black;
@@ -122,49 +120,149 @@ nav a:hover .additional-text {
   box-shadow: 1px 1px 23px 6px black;
 }
 
-.main-container a{
-  color:#FAC3B3 !important;
+.main-container a {
+  color: #FAC3B3 !important;
   text-decoration: none;
 }
 
-.main-container a:hover{
+.main-container a:hover {
   text-decoration: underline;
 }
 
-.main-title{
+.main-title {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20px;
 }
 
-.main-container.box-r{
+.main-container.box-r {
   margin-right: 250px;
 }
 
-.main-container.box-l{
+.main-container.box-l {
   margin-left: 250px;
 }
 
-.main-title h5{
+.main-title h5 {
   margin-right: 15px;
 }
 
 /* footer */
-footer .container{
+footer .container {
   height: 50px;
   display: flex;
   align-items: center;
   margin-top: 100px;
 }
 
-.container{
+.container {
   display: flex;
   align-items: center;
   gap: 15px;
   justify-content: center;
 }
 
-h5{
+h5 {
   margin: 0;
 }
+
+@media (max-width:750px) {
+  .main-container.box-r,
+  .main-container.box-l {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width:500px) {
+
+  .main-container {
+    width: 95%;
+    height: auto;
+  }
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .nav-links {
+    display: none;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    background-color: white;
+    width: 160px;
+    text-align: center;
+    padding: 20px;
+    padding-right: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 8px;
+    border: 2px solid black;
+    right: 0;
+    left: auto;
+  }
+
+  .nav-links.show {
+    display: flex;
+    background-color: #f2e8cf;
+
+  }
+
+  .nav-links a {
+    display: flex;
+    padding: 12px;
+    font-size: 18px;
+    gap: 12px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .nav-links .additional-text {
+    font-size: 16px;
+    opacity: 1;
+    transform: none;
+    top: 20%;
+    right: -60%;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 15px;
+    margin-left: 20px;
+  }
+
+  .admin {
+    margin-left: auto;
+  }
+
+}
+
+/* הסתרת האייקונים במסכים קטנים */
+@media (max-width: 550px) {
+  footer .material-symbols-outlined {
+    display: none;
+  }
+  footer{
+    text-align: center;
+}
+}
+
+/* הקטנת האייקונים במסכים קטנים */
+/* @media (max-width: 550px) {
+  footer .material-symbols-outlined {
+    font-size: 18px;
+  }
+
+  footer h5 {
+    font-size: 14px;
+  }
+} */

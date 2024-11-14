@@ -35,7 +35,7 @@
                     <img src="images/logo.png" alt="logo">
                 </a>
             </div>
-            <nav>
+            <nav class="nav-links">
                 <a href="about.html">
                     <span class="material-symbols-outlined"> favorite</span>
                     <span class="additional-text">אודותינו</span>
@@ -57,6 +57,11 @@
                     <span class="additional-text">תפריט</span>
                 </a>
             </nav>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+
         </div>
     </header>
 
@@ -109,6 +114,14 @@
     </footer>
 
     <!-- scripts -->
+
+    <!-- Navbar -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
 
     <!-- #BringThemHomeNOW -->
     <div id="bthn" lang="he"></div>

@@ -7,6 +7,12 @@ body {
 }
 
 /* header */
+header {
+  position: fixed;
+  background-color: #f2e8cf;
+  z-index: 1000;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -33,7 +39,6 @@ header nav a {
     text-decoration: none;
     padding: 0 12px;
     position: relative;
-    /* הגדרת מיקום יחסי לילדים שלו */
 }
 
 header nav a::after {
@@ -53,25 +58,19 @@ header nav a:hover::after {
 .additional-text {
     position: absolute;
     top: 120%;
-    /* יוסיף את הכיתוב מתחת לקישור */
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    /* נסתיר את הכיתוב עד שהמשתמש ילחץ על הקישור */
     transition: opacity 0.3s;
-    /* אנימציה של עמעום */
 }
 
 nav a:hover .additional-text {
     opacity: 1;
-    /* הצגת הכיתוב כאשר מעבירים על הקישור */
 }
 
 .material-symbols-outlined {
     font-size: 40px;
-    /* גודל הגופן */
     font-weight: 400;
-    /* משקל הגופן */
 }
 
 .title {
@@ -84,6 +83,7 @@ nav a:hover .additional-text {
     width: 50%;
     margin: 0 auto;
     border-radius: 8px;
+    padding-top: 150px;
 }
 
 .title h1 {
@@ -97,7 +97,6 @@ main .box {
 
 main .container {
     display: flex;
-    /* במסכים קטנים - הם 'יפלו' לשורה הבאה */
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -114,7 +113,6 @@ main .box {
     border: 1px solid #f2e8cf;
     border-radius: 8px;
     min-height: 300px;
-    /* צל - העתקה מהאתר */
     box-shadow: 1px 1px 23px 6px black;
     width: 650px;
 }
@@ -137,3 +135,82 @@ footer {
 h5 {
     margin: 0;
 }
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 550px) {
+    .nav-links {
+      display: none;
+      flex-direction: column-reverse;
+      position: absolute;
+      top: 120px;
+      right: 0;
+      background-color: white;
+      width: 160px;
+      text-align: center;
+      padding: 20px;
+      padding-right: 50px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      border-radius: 8px;
+      border: 2px solid black;
+      right: 0;
+      left: auto;
+    }
+  
+    .nav-links.show {
+      display: flex;
+      background-color: #f2e8cf;
+    }
+  
+    .nav-links a {
+      display: flex;
+      padding: 12px;
+      font-size: 18px;
+      gap: 12px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .nav-links .material-symbols-outlined {
+      font-size: 24px;
+    }
+  
+    .nav-links .additional-text {
+      font-size: 16px;
+      opacity: 1;
+      transform: none;
+      top: 20%;
+      right: -60%;
+    }
+  
+    .hamburger {
+      display: block;
+      margin-right: 15px;
+      margin-left: 20px;
+    }
+  }
+  
+  /* הסתרת האייקונים במסכים קטנים */
+  @media (max-width: 550px) {
+    footer .material-symbols-outlined {
+      display: none;
+    }
+    footer{
+        text-align: center;
+    }
+  }
+  
+  /* הקטנת האייקונים במסכים קטנים */
+  /* @media (max-width: 550px) {
+    footer .material-symbols-outlined {
+      font-size: 18px;
+    }
+  
+    footer h5 {
+      font-size: 14px;
+    }
+  } */

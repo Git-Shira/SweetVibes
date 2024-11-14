@@ -33,7 +33,7 @@
                     <img src="images/logo.png" alt="logo">
                 </a>
             </div>
-            <nav>
+            <nav class="nav-links">
                 <a href="about.html">
                     <span class="material-symbols-outlined"> favorite</span>
                     <span class="additional-text">אודותינו</span>
@@ -55,6 +55,11 @@
                     <span class="additional-text">תפריט</span>
                 </a>
             </nav>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+
         </div>
     </header>
 
@@ -70,6 +75,11 @@
     <hr>
     <br>
     <div class="container-buttons">
+        <div class="text">
+            <h4>
+                :קטגוריות
+            </h4>
+        </div>
         <button id="filterCream" class="round-button">
             <span class="material-symbols-outlined"> icecream </span>
             גלידות
@@ -90,23 +100,19 @@
             <span class="material-symbols-outlined"> cake </span>
             עוגות
         </button>
-        <div class="text">
-            <h4>
-                :קטגוריות
-            </h4>
-        </div>
+
     </div>
 
     <br>
 
     <div class="container-buttons2">
-        <button id="filter1"> חלבי </button>
-        <button id="filter2"> פרווה </button>
         <div class="text">
             <h4>
                 :פילטרים
             </h4>
         </div>
+        <button id="filter1"> חלבי </button>
+        <button id="filter2"> פרווה </button>
     </div>
 
     <br>
@@ -147,6 +153,14 @@
     </footer>
 
     <!-- scripts -->
+
+    <!-- Navbar -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
 
     <!-- #BringThemHomeNOW -->
     <div id="bthn" lang="he"></div>
