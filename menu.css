@@ -231,7 +231,7 @@ h5 {
     .container-buttons2 {
         margin-right: 50px !important;
     }
-    
+
     .text {
         width: 100%;
         justify-content: right;
@@ -296,7 +296,7 @@ h5 {
 }
 
 /* הסתרת האייקונים במסכים קטנים */
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
     footer .material-symbols-outlined {
         display: none;
     }
@@ -304,15 +304,16 @@ h5 {
     footer {
         text-align: center;
     }
-}
+} */
 
 /* הקטנת האייקונים במסכים קטנים */
-/* @media (max-width: 550px) {
+@media (max-width: 550px) {
     footer .material-symbols-outlined {
-      font-size: 18px;
+        font-size: 18px;
+        margin-right: -10px;
     }
-  
+
     footer h5 {
-      font-size: 14px;
+        font-size: 14px;
     }
-  } */
+}

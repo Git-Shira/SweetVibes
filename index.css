@@ -168,6 +168,7 @@ h5 {
 }
 
 @media (max-width:750px) {
+
   .main-container.box-r,
   .main-container.box-l {
     margin: 0 auto;
@@ -247,22 +248,23 @@ h5 {
 }
 
 /* הסתרת האייקונים במסכים קטנים */
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   footer .material-symbols-outlined {
     display: none;
   }
   footer{
     text-align: center;
-}
-}
+  }
+} */
 
 /* הקטנת האייקונים במסכים קטנים */
-/* @media (max-width: 550px) {
+@media (max-width: 550px) {
   footer .material-symbols-outlined {
     font-size: 18px;
+    margin-right: -10px;
   }
 
   footer h5 {
     font-size: 14px;
   }
-} */
+}
