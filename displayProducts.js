@@ -33,14 +33,17 @@ const showProducts = (items) => {
   let productsContainer = document.querySelector("#id_products");
   productsContainer.innerHTML = '';
 
-  items.map(item => {
-    let div = document.createElement("div");
-    div.className = "col-lg-2 col-md-3 col-sm-4 col-6 border p-2 product";
-    productsContainer.append(div);
+  if (items.length === 0) {
+    productsContainer.innerHTML = `<p style="direction: rtl;font-size:20px;text-align:center;"><strong>נראה שאין לנו בדיוק את מה שחיפשת הפעם, אבל יש לנו הרבה דברים טעימים אחרים להציע :)</strong></p>`;
+  } else {
+    items.map(item => {
+      let div = document.createElement("div");
+      div.className = "col-lg-2 col-md-3 col-sm-4 col-6 border p-2 product";
+      productsContainer.append(div);
 
-    div.style.backgroundImage = `url(${item.img})`;
+      div.style.backgroundImage = `url(${item.img})`;
 
-    div.innerHTML += `
+      div.innerHTML += `
         <img src="${item.img}" class="product-image" alt="${item.name}">
         <div class="product-details">
           <strong>
@@ -52,7 +55,8 @@ const showProducts = (items) => {
           </strong>
         </div>
     `;
-  });
+    });
+  }
 };
 
 const declareViewEvenets = () => {
